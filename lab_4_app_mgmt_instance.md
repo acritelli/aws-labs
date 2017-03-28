@@ -83,10 +83,23 @@ Perform the following as the root user.
 
 TODO
 
-## ocumentation
+## Documentation
+
+## Teardown Information
+
+You will incur fees if you do not delete the EC2 instance created during this lab. The teardown process is below.
+
+1. Terminate the EC2 instance from the EC2 console
 
 ## Questions
 
 1. We manually performed all of the above configuration steps after our instance launched. How could this have been performed automatically during the instance provisioning process?
 
-Something about user data...
+2. How would you obtain the public IP address of your instance while logged into the instance and without using the EC2 console?
+    * Hint: This will involve making a web request to a specific URL
+
+3. Explain the difference between user data and metadata.
+
+4. Consider the following scenario: while working on your instance, you make a mistake and determine that terminating and recreating the instance is the best resolution. The instance has only been on for 5 minutes. How will you be charged?
+
+5. Does rebooting your instance incur charge for a full hour? In other words, if you reboot a single instance, are you charged for two hours?
