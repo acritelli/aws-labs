@@ -54,7 +54,7 @@ Perform the following as the root user.
 3. Add an entry to /etc/fstab to ensure that the EFS is automatically mounted on boot: fs-xxxxxxxx.efs.us-east-1.amazonaws.com:/ /mnt/efs nfs nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2
     * Add the line above to the /etc/fstab file
 
-# Step 4: Add a table to the RDS instance
+## Step 4: Add a table to the RDS instance
 
 Our web application uses MySQL as its backend database. Before the web app can use the previously configured RDS instance, a table must be added to the database.
 
@@ -64,7 +64,7 @@ Perform the following from your SSH session.
 2. Use the database that was already created during RDS provisioning: USE testapp;
 3. Add a table for the web app: CREATE TABLE images (url TEXT);
 
-# Step 5: Configure the webserver
+## Step 5: Configure the webserver
 
 Now that all of the backend infrastructure has been built and configured, we can begin to configure the actual webserver to host our application.
 
@@ -79,9 +79,11 @@ Perform the following as the root user.
 8. Start the web server: service httpd start
 9. Configure the web server to start on boot: chkconfig httpd on
 
-# Step 6: Test the web app
+## Step 6: Test the web app
 
 TODO
+
+## ocumentation
 
 ## Questions
 
