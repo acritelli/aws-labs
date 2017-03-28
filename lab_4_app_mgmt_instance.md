@@ -85,6 +85,12 @@ TODO
 
 ## Documentation
 
+Document the information below about your environment. This documentation will be useful during later labs.
+
+| Name     | Instance ID | IPv4 Public IP |
+| :------- | :---------- | :------------- |
+|          |             |                |
+
 ## Teardown Information
 
 You will incur fees if you do not delete the EC2 instance created during this lab. The teardown process is below.
