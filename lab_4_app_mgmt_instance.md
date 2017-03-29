@@ -65,8 +65,7 @@ Perform the following from your SSH session.
 3. Add a table for the web app: CREATE TABLE images (url TEXT);
 
 ## Step 5: Configure the webserver
-
-Now that all of the backend infrastructure has been built and configured, we can begin to configure the actual webserver to host our application.
+ that all of the backend infrastructure has been built and configured, we can begin to configure the actual webserver to host our application.
 
 Perform the following as the root user.
 
@@ -81,7 +80,18 @@ Perform the following as the root user.
 
 ## Step 6: Test the web app
 
-TODO
+The premise of our web application is a photography website. We use an administrative interface to add photos to the site, and they appear on the home page. Now that we have our instance deployed, we need to ensure that the web app is functioning properly.
+
+Perform the following from a web browser.
+
+1. Navigate to the public DNS name or IP address of your instance.
+2. Navigate to the "Admin" page of the web app.
+    * The interface accepts URLs for photos that we wish to add to our page. The URL for these photos is stored in the database.
+3. Find the link for a picture that you wish to upload. The link should be a direct link to the photo.
+    * [Pixabay](https://pixabay.com/en/beach-north-sea-sea-sunset-water-2179624/) is a useful resource for finding photos that can be used.
+4. Submit the URL to be added to the site.
+5. Navigate to the home page of the site. You should now be able to see the image that was just added.
+
 
 ## Documentation
 
