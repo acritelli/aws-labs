@@ -19,12 +19,6 @@ Perform the following from the RDS console.
 5. Create the read replica. This may take several minutes.
 6. Once the read replica has been deployed, record the relevant information in the lab documentation section.
 
-**Question:** When deploying the read replica, there was an option for enhanced monitoring. This option was also present when deploying the original RDS instance. Explain what Enhanced Monitoring can provide. What is the difference between using Enhanced Monitoring verus the standards CloudWatch metrics that could be collected?
-
-**Question:** Should read replicas be used for increased availability or increased database performance?
-
-**Question:** Imagine that you create a read replca for your application, but later discover that you would like to use the instance as a normal database with read and write permissions. How can you achieve this?
-
 ## Step 2: Modify the web application to use the read replica
 
 We must now configure the web app on our existing EC2 instance to use the read replica. We will revert this configuration back once we have created the AMI for our publicly accessible auto scaling group.
@@ -40,23 +34,15 @@ Perform the following from a browser.
 3. Try to link a new photo, as done in previous labs.
     * The upload attempt should fail and a MySQL message should be displayed.
 
-**Question:** Why did the attempt to publish an image fail?
-
-
 ## Step 4: Create an AMI
 
 Note: creating an AMI will cause your instance to reboot, and you will lose connectivity during the reboot process.
-
-**Question:** Describe some different ways that you could share an AMI with others.
-
-**Question:** Do the public DNS name and IP address of an instance change during reboot?
 
 ## Step 5: Revert the web app configuration
 
 Now that we have created an AMI for our auto scaling group, it is safe to revert the configuration of the web application to use the master database. Remember, the current EC2 instance will be used to manage the web application, and access to the interface will be restricted by IP address.
 
 Connect to your instance over SSH and perform the following.
-
 
 ## Documentation
 
@@ -65,3 +51,15 @@ Connect to your instance over SSH and perform the following.
 Don't forget to delete snapshot after deregistering AMI.
 
 ## Questions
+
+**Question:** When deploying the read replica, there was an option for enhanced monitoring. This option was also present when deploying the original RDS instance. Explain what Enhanced Monitoring can provide. What is the difference between using Enhanced Monitoring verus the standards CloudWatch metrics that could be collected?
+
+**Question:** Should read replicas be used for increased availability or increased database performance?
+
+**Question:** Imagine that you create a read replca for your application, but later discover that you would like to use the instance as a normal database with read and write permissions. How can you achieve this?
+
+**Question:** Why did the attempt to publish an image during step 3 fail?
+
+**Question:** Describe some different ways that you could share an AMI with others.
+
+**Question:** Do the public DNS name and IP address of an instance change during reboot?
