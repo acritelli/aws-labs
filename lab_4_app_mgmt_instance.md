@@ -39,8 +39,10 @@ Connect to your instance over SSH and perform the following.
 4. Install web software: yum install -y httpd php php-mysql
 5. Install mysql: yum install -y mysql
     * MySQL is used to remotely connect to the RDS instance and create a new table
-6. Install CPU stress testing tool: yum install -y stress-ng
-    * We will use stress-ng to run CPU stress tests on the instances in our Auto Scaling Group (ASG)
+6. Enable the EPEL repository: yum-config-manager --enable epel
+    * This is necessary to install the stress tool
+6. Install CPU stress testing tool: yum install -y stress
+    * We will use stress to run CPU stress tests on the instances in our Auto Scaling Group (ASG)
 
 ## Step 3: Mount the EFS share
 
