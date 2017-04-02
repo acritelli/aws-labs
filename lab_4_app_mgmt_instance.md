@@ -75,6 +75,7 @@ Perform the following as the root user.
 3. Create a directory for the app code: mkdir /mnt/efs/testapp
 4. Download the application code to the EFS: wget << TODO: link to app code >> /mnt/efs/testapp/
 5. Delete the default web directory: rm -rf /var/www/html
+TODO: rework this to account for app configuration location.
 6. Change ownership of the app directory to the apache user: chown -R apache:apache /mnt/efs/testapp
 7. Create a symbolic link for the web directory to the EFS: ln -s /mnt/efs /var/www/html
 8. Start the web server: service httpd start
