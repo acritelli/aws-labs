@@ -52,14 +52,14 @@ Don't forget to delete snapshot after deregistering AMI.
 
 ## Questions
 
-**Question:** When deploying the read replica, there was an option for enhanced monitoring. This option was also present when deploying the original RDS instance. Explain what Enhanced Monitoring can provide. What is the difference between using Enhanced Monitoring verus the standards CloudWatch metrics that could be collected?
+1. When deploying the read replica, there was an option for enhanced monitoring. This option was also present when deploying the original RDS instance. Explain what Enhanced Monitoring can provide. What is the difference between using Enhanced Monitoring verus the standards CloudWatch metrics that could be collected?
 
-**Question:** Should read replicas be used for increased availability or increased database performance?
+2. Should read replicas be used for increased availability or increased database performance?
 
-**Question:** Imagine that you create a read replca for your application, but later discover that you would like to use the instance as a normal database with read and write permissions. How can you achieve this?
+3. Imagine that you create a read replca for your application, but later discover that you would like to use the instance as a normal database with read and write permissions. How can you achieve this?
 
-**Question:** Why did the attempt to publish an image during step 3 fail?
+4. Why did the attempt to publish an image during step 3 fail?
 
-**Question:** Describe some different ways that you could share an AMI with others.
+5. Describe some different ways that you could share an AMI with others.
 
-**Question:** Do the public DNS name and IP address of an instance change during reboot?
+6. Do the public DNS name and IP address of an instance change during reboot?
