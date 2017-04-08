@@ -22,11 +22,11 @@ This specific series of labs is currently designed to provide hands-on experienc
 
 ## Scenario and Topology
 
-< Image of topology >
-
-Screenshot of web app
+![Topology](images/topology.png)
 
 We will be deploying a very simple web application during this series of labs. The application is designed to host photos for your photography website. It uses a very simple MySQL backend database to hold URL links to the images. A single administrative instance allows connectivity to a master MySQL database to add new images to the site. A set of web servers in an Auto Scaling Group allow for public connectivity to view the website, which is accessible via an Elastic Load Balancer. These publicly accessible servers connect to a read replica of the MySQL database, and are unable to make any database changes. The actual PHP code for the web application is hosted on an EFS share that each web server instance connects to.
+
+<< screenshot of web app >>
 
 If this web app sounds ridiculously contrived, that's because it is. It's not designed to be a completely realistic application. Rather, it is designed to showcase services and features in AWS. You probably wouldn't use a database read replica in the real world to enforce security (MySQL users and permissions are good at that sort of thing). However, by seeing the effects of deploying a read replica, you can better understand their capabilities. **This is important:** Please view the application deployed in these labs as a pedagogical tool for teaching AWS, and not as a recommended application architecture.
 
