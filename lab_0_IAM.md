@@ -32,12 +32,22 @@ Perform the following from the IAM console.
 
 ## Documentation
 
+Document the information below about your environment. This documentation will be useful during later labs.
+
+| Username | Password | Group |
+| :------- | :------- | :---- |
+| labuser  | labgroup |       |
+
+| Group Name | Policies |
+| :--------- | :------- |
+| labgroup   |          |
 
 ## Teardown Information
 
 None of the resources provisioned during this lab will incur any costs. However, the teardown process is below.
 
-1. Delete the user created
+1. Delete the user that was created in the IAM console
+2. Delete the group that was created in the IAM console
 
 ## Questions
 
