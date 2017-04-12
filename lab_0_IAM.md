@@ -6,6 +6,13 @@ AWS provides very powerful constructs for managing permissions across resources.
 
 Perform the following from the IAM console.
 
+1. Create a new group with a descriptive name, such as "labgroup"
+2. Attach full access policies for the following services:
+    * VPC
+    * EC2
+    * Elastic File System
+    * RDS
+
 ## Step 2: Create the user needed for lab activities
 
 Perform the following from the IAM console.
@@ -19,17 +26,21 @@ Perform the following from the IAM console.
 
 ## Step 3: Log in as the newly created user
 
-Create a user with the correct permissions for all other labs.
+1. Navigate to the IAM users sign-in link
+    * This can be found on the front page of the IAM console
+2. Ensure that you can log in as your newly created IAM user
 
-Permissions:
-  Create VPCs, subnets, IGs, SGs
-  Create AMIs
-  Create EC2 instances
-  Create ASGs
-  Create ELBs
-  Create RDS DBs and RRs
-  Create EFS
+## Documentation
+
+
+## Teardown Information
+
+None of the resources provisioned during this lab will incur any costs. However, the teardown process is below.
+
+1. Delete the user created
 
 ## Questions
 
 1. What is the difference between programmatic access and AWS management console access? When would each type of access be appropriate?
+
+2. Review the Policies page on the IAM console. What data format are policies written in?
