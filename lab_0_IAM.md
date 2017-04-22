@@ -42,6 +42,8 @@ Document the information below about your environment. This documentation will b
 | :--------- | :------- |
 | labgroup   |          |
 
+**Be sure to keep the created username and password private**
+
 ## Teardown Information
 
 None of the resources provisioned during this lab will incur any costs. However, the teardown process is below.
