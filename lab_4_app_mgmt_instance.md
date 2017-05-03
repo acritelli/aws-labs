@@ -67,7 +67,7 @@ Perform the following from your SSH session.
 3. Add a table for the web app: CREATE TABLE images (url TEXT);
 
 ## Step 5: Configure the webserver
- that all of the backend infrastructure has been built and configured, we can begin to configure the actual webserver to host our application.
+Now that all of the backend infrastructure has been built and configured, we can begin to configure the actual webserver to host our application.
 
 Perform the following as the root user.
 
