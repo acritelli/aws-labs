@@ -29,14 +29,15 @@ Perform the following from the IAM console.
 1. Navigate to the IAM users sign-in link
     * This can be found on the front page of the IAM console
 2. Ensure that you can log in as your newly created IAM user
+3. Perform subsequent lab activities using this user
 
 ## Documentation
 
 Document the information below about your environment. This documentation will be useful during later labs.
 
-| Username | Password | Group |
-| :------- | :------- | :---- |
-| labuser  | labgroup |       |
+| Username | Password | Group    |
+| :------- | :------- | :------- |
+| labuser  |          | labgroup |
 
 | Group Name | Policies |
 | :--------- | :------- |
