@@ -1,6 +1,6 @@
 # Lab 1: Build a VPC
 
-Before deploying any other services into the lab environment, we must create a virtual private cloud (VPC). A VPC is like a virtual datacenter, spread across multiple availability zones within a region. Our VPC will contain the EC2 instances, RDS databases, and other all other services that support our lab environment.
+Before deploying any other services into the lab environment, we must create a virtual private cloud (VPC). A VPC is like a virtual datacenter, spread across multiple availability zones within a region. Our VPC will contain the EC2 instances, RDS databases, and all other services that support our lab environment.
 
 **Estimated time to complete:** 30 minutes
 
