@@ -2,6 +2,8 @@
 
 AWS provides very powerful constructs for managing permissions across resources. Granular permissions can be assigned to users and groups, with the ability to create accounts for console access and API access. Additionally, specific roles can be created and assigned to resources, which provides the flexibility to manage permissions at the resource level.
 
+**Estimated time to complete:** 10 minutes
+
 ## Step 1: Create a group for lab use
 
 Perform the following from the IAM console.
