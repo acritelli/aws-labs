@@ -1,6 +1,6 @@
 # Lab 3: Create an EFS
 
-We would like to have some storage that can be shared between application server instances. All application servers will mount the web directory from EFS, allowing them to share the same code. Elastic File System (EFS) will provide us with the ability to create an elastic storage system that can be mounted to multiple EC2 instances NFS.
+We would like to have some storage that can be shared between application server instances. All application servers will mount the web directory from EFS, allowing them to share the same code. Elastic File System (EFS) will provide us with the ability to create an elastic storage system that can be mounted to multiple EC2 instances via NFS.
 
 Note that sharing the same code via a network share isn't something that is recommended in production. Rather, this contrived scenario is used to build familiarity with AWS service offerings.
 
@@ -21,7 +21,7 @@ Perform the following from the VPC console.
     * Allow NFS traffic from any source
     * We will further refine these rules during later labs
 
-## Step 2: Create an EFS <<whatever its called>>
+## Step 2: Create an Elastic File System
 
 Perform the following from the EFS console.
 

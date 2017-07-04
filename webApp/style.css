@@ -1,0 +1,47 @@
+html{
+  height: 100%;
+}
+
+body{
+  background-color: #cddcdf;
+  height: 100%;
+}
+
+.header{
+  padding-top: .1%;
+  padding-bottom: .1%;
+  background-color: #2b3d42;
+}
+
+h1{
+  color: #92a3a5;
+  text-align: center;
+}
+
+#navBar{
+  background-color: #224958;
+  height: 5%;
+  width: 100%;
+  padding-top: 1px;
+  padding-bottom: 1px;
+}
+
+.navButton{
+  float: left;
+  display: block;
+  width: 10%;
+  padding: 5px 5px;
+}
+
+.navButton a{
+  text-decoration: none;
+  color: white;
+}
+
+#centerPage{
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  margin-top: 1%;
+}
+

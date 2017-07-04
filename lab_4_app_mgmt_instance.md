@@ -62,7 +62,8 @@ Our web application uses MySQL as its backend database. Before the web app can u
 
 Perform the following from your SSH session.
 
-1. Log into your RDS instance: mysql -u <Master Username> -p <Master Password> -h <RDS Endpoint>
+1. Log into your RDS instance: mysql -u <Master Username> -p -h <RDS Endpoint>
+    * Enter your master password when prompted
 2. Use the database that was already created during RDS provisioning: USE testapp;
 3. Add a table for the web app: CREATE TABLE images (url TEXT);
 

@@ -2,13 +2,11 @@
 
 Now that we have a VPC to place our resources into, we will create a database for the backend of our web application. Our database will start off very simple: just a single RDS instance to support the initial deployment of our app. Future labs will build on this database to add additional functionality.
 
-Cost - .017/hour in NoVA + .01 per GB of data transfer to EC2 instance, also in NoVA (different AZs). Latter not applicable if deployed in same AZ + .0115 per GB-month (need to calc based on hours/size of 5GB minimum)
-
 **Estimated time to complete:** 30 minutes
 
-Create a DB subnet group - may not be necessary**
-  Obtain the AZ of your private subnet from the VPC screen
-  Question: Explain what a DB subnet group is
+Cost - RDS incurs a cost. Consult the [RDS Pricing Website](https://aws.amazon.com/rds/pricing/) for complete information.
+
+**Estimated time to complete:** 30 minutes
 
 ## Step 1: Create a security group for MySQL
 
@@ -17,15 +15,15 @@ Before we can deploy an RDS instance, it helps to have a defined security group 
 Perform the following from the VPC console.
 
 1. Create a security group with the following attributes:
-    * Name tag: Allow MySQL
-    * Group name: Allow MySQL
+    * Name tag: Lab Allow MySQL
+    * Group name: Lab Allow MySQL
     * Description: Provide something descriptive for the security group
     * VPC: specify your lab VPC
 2. Edit the inbound rules of the newly created security group:
     * Allow MySQL/Aurora traffic from any source
     * We will further refine these rules during later labs
 
-## Step2: Launch an RDS Instance
+## Step 2: Launch an RDS Instance
 
 Perform the following from the RDS console.
 
@@ -40,10 +38,11 @@ Perform the following from the RDS console.
 4. Configure the Advanced Settings with the following attributes:
     * Network & Security
       * Set the VPC to your Lab VPC
-      * Specify your two private subnets <--- TODO: check this
+      * Specify the same availability zone as the AZ created for your public subnet
       * Specify the security group created in step 1
     * Publicly accessible - no
 5. Configure the database name as: testapp
+6. Leave the remaining settings at their default values
 
 ## Documentation
 

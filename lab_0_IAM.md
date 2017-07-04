@@ -25,6 +25,7 @@ Perform the following from the IAM console.
 3. Specify the Access Type as "AWS Management Console access"
 4. Use a custom password of your choice
 5. Uncheck the setting for "Require password reset"
+6. Assign the user to the group created in Step 1
 
 ## Step 3: Log in as the newly created user
 
