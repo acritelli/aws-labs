@@ -43,6 +43,8 @@ Connect to your instance over SSH and perform the following.
     * This is necessary to install the stress tool
 6. Install CPU stress testing tool: yum install -y stress
     * We will use stress to run CPU stress tests on the instances in our Auto Scaling Group (ASG)
+7. Install Git
+    * Git is needed for downloading the source code for our web app
 
 ## Step 3: Mount the EFS share
 
@@ -74,13 +76,20 @@ Perform the following as the root user.
 
 1. Change directories to the EFS: cd /mnt/efs
 3. Create a directory for the app code: mkdir /mnt/efs/testapp
-4. Download the application code to the EFS: wget << TODO: link to app code >> /mnt/efs/testapp/
-5. Delete the default web directory: rm -rf /var/www/html
-TODO: rework this to account for app configuration location.
-6. Change ownership of the app directory to the apache user: chown -R apache:apache /mnt/efs/testapp
-7. Create a symbolic link for the web directory to the EFS: ln -s /mnt/efs /var/www/html
-8. Start the web server: service httpd start
-9. Configure the web server to start on boot: chkconfig httpd on
+4. Obtain a copy of the web app code
+    * git clone https://github.com/acritelli/aws-labs.git
+5. Move the web app code into your newly created directory
+    * mv aws-labs/webApp/* testapp/
+    * rm -rf aws-labs
+6. Delete the default web directory: rm -rf /var/www/html
+7. Change ownership of the app directory to the apache user: chown -R apache:apache /mnt/efs/testapp
+8. Create a symbolic link for the web directory to the EFS: ln -s /mnt/efs/testapp /var/www/html
+9. Move the configurationf file for the web application: mv /mnt/efs/testapp/
+    * Our configuration file will be unique to our admin and public instances. Our admin instance will point to the writeable MySQL database, while our public instances will point to a Read Replica. By playing the configuration file outside of our EFS share, we can have a unique copy on each instance.
+10. Modify the config.php file to reflect the RDS instance details that were created previously.
+    * vim /var/www/config.php
+11. Start the web server: service httpd start
+12. Configure the web server to start on boot: chkconfig httpd on
 
 ## Step 6: Test the web app
 
@@ -88,14 +97,21 @@ The premise of our web application is a photography website. We use an administr
 
 Perform the following from a web browser.
 
-1. Navigate to the public DNS name or IP address of your instance.
+1. Navigate to the public DNS name or IP address of your instance. You should see something like the screenshot below. Welcome to the world's worst web application!
+
+![Web App Home Page](images/app_homepage.png "Web App Home Page")
+
 2. Navigate to the "Admin" page of the web app.
     * The interface accepts URLs for photos that we wish to add to our page. The URL for these photos is stored in the database.
 3. Find the link for a picture that you wish to upload. The link should be a direct link to the photo.
     * [Pixabay](https://pixabay.com/en/beach-north-sea-sea-sunset-water-2179624/) is a useful resource for finding photos that can be used.
 4. Submit the URL to be added to the site.
+
+![Adding an Image](images/app_adding_image.png "Adding an Image")
+
 5. Navigate to the home page of the site. You should now be able to see the image that was just added.
 
+![Image Added](images/app_image_success.png "Image Added")
 
 ## Documentation
 

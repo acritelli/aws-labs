@@ -1,6 +1,6 @@
 <?php
 
-  include 'config.php';
+  include '/var/www/config.php';
 
   $conn = new mysqli($server, $username, $password, $dbname);
 
