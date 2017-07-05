@@ -23,7 +23,17 @@ Perform the following from the VPC console.
     * Allow MySQL/Aurora traffic from any source
     * We will further refine these rules during later labs
 
-## Step 2: Launch an RDS Instance
+## Step 2: Create a Subnet group
+
+Perform the following from the RDS console.
+
+1. Create a new Subnet group with the following attributes:
+    * Name: lab-subnet-group
+    * Description: Provide something descriptive for your subnet group
+    * VPC ID: Specify the Lab VPC created earlier
+2. Add both private subnets to the group
+
+## Step 3: Launch an RDS Instance
 
 Perform the following from the RDS console.
 
@@ -38,8 +48,9 @@ Perform the following from the RDS console.
 4. Configure the Advanced Settings with the following attributes:
     * Network & Security
       * Set the VPC to your Lab VPC
+      * Specify the subnet group created previously
       * Specify the same availability zone as the AZ created for your public subnet
-      * Specify the security group created in step 1
+      * Specify the security group created previously
     * Publicly accessible - no
 5. Configure the database name as: testapp
 6. Leave the remaining settings at their default values
@@ -62,7 +73,7 @@ You will incur fees if you do not terminate the RDS instance created during this
 
 ## Questions
 
-1. What is a DB subnet group? Why didn't we need one when deploying our RDS instance?
+1. What is a DB subnet group?
 
 2. What is multi-AZ? Is it used for increased capacity or availability? Are there different endpoints for each database instance in a multi-AZ configuration?
 
