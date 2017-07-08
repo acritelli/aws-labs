@@ -20,8 +20,7 @@ Perform the following from the VPC console.
     * Description: Provide something descriptive for the security group
     * VPC: specify your lab VPC
 2. Edit the inbound rules of the newly created security group:
-    * Allow MySQL/Aurora traffic from any source
-    * We will further refine these rules during later labs
+    * Allow MySQL/Aurora traffic from your public lab subnet: 10.10.100.0/24
 
 ## Step 2: Create a Subnet group
 
@@ -61,7 +60,7 @@ Document the information below about your environment. This documentation will b
 
 | RDS Instance Identifier    | Endpoint                                        | Master Username | Master Password |
 | :------------------------- | :---------------------------------------------- | :-------------- | :-------------- |
-| Lab-DB                     | lab-db.xxxxxxxxxxxx.us-east-1.rds.amazonaws.com |                 |                 |
+| lab-db                     | lab-db.xxxxxxxxxxxx.us-east-1.rds.amazonaws.com |                 |                 |
 
 **Be sure to keep the master username and password private**
 

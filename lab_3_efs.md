@@ -18,8 +18,7 @@ Perform the following from the VPC console.
     * Description: Provide something descriptive for the security group
     * VPC: specify your lab VPC
 2. Edit the inbound rules of the newly created security group:
-    * Allow NFS traffic from any source
-    * We will further refine these rules during later labs
+    * Allow NFS traffic from your public lab subnet: 10.10.100.0/24
 
 ## Step 2: Create an Elastic File System
 

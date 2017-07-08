@@ -4,6 +4,8 @@ The publicly accessible webservers will be placed into an auto scaling group. Th
 
 To build this part of the infrastructure, we must first create an RDS read replica that our public instances will connect to. Then we will modify our existing instance to use this read replica and create an AMI based on the instance.
 
+Cost - RDS Read Replicas will incur a cost. So will instances launched in an auto scaling group.
+
 **Estimated time to complete:** 45 minutes
 
 ## Step 1: Create an RDS Read Replica
@@ -12,12 +14,11 @@ We must first create an RDS read replica that will be configured in our AMI.
 
 Perform the following from the RDS console.
 
-1. Select your existing RDS instance.
+1. Select your existing RDS instance
 2. From the "Instance Actions" dropdown, select "Create Read Replica"
 3. Set the DB Instance Identifier to lab-db-rr
-4. Leave all other values at their defaults.
-5. Create the read replica. This may take several minutes.
-6. Once the read replica has been deployed, record the relevant information in the lab documentation section.
+4. Leave all other values at their defaults
+5. Create the read replica. This may take several minutes
 
 ## Step 2: Modify the web application to use the read replica
 
@@ -25,18 +26,30 @@ We must now configure the web app on our existing EC2 instance to use the read r
 
 Connect to your instance over SSH and perform the following.
 
+1. Open /var/www/config.php in your text editor of choice
+2. Change the $server FQDN to the endpoint of your newly created Read Replica
+
 ## Step 3: Test the reconfigured web application
+
+Our web application is now (temporarily) configured to use a read-only MySQL database. Any attempt to add new images to our site should fail. Before proceeding, let's test this out to confirm.
 
 Perform the following from a browser.
 
-1. Navigate to the public DNS name or IP address of your instance.
-2. Navigate to the "Admin" section of the interface.
-3. Try to link a new photo, as done in previous labs.
-    * The upload attempt should fail and a MySQL message should be displayed.
+1. Navigate to the public DNS name or IP address of your instance
+2. Navigate to the "Admin" section of the interface
+3. Try to link a new photo, as done in previous labs
+    * The upload attempt should fail and a MySQL message should be displayed indicating that the server is read-only
 
 ## Step 4: Create an AMI
 
-Note: creating an AMI will cause your instance to reboot, and you will lose connectivity during the reboot process.
+We will create an Amazon Machine Image (AMI) to launch copies of our public instances into our Auto Scaling Group. Perfom the following from the EC2 console.
+
+1. Select your App Master instance
+2. Select Actions > Image > Create Image and create an image with the following attributes:
+    * Image name: app-public-image
+    * Image description: Provide something descriptive for the AMI
+3. Create the image
+    * Note: creating an AMI will cause your instance to reboot, and you will lose connectivity during the reboot process.
 
 ## Step 5: Revert the web app configuration
 
@@ -44,11 +57,29 @@ Now that we have created an AMI for our auto scaling group, it is safe to revert
 
 Connect to your instance over SSH and perform the following.
 
+1. Open /var/www/config.php in your text editor of choice
+2. Change the $server FQDN to the endpoint of your original RDS instance
+    * This will allow for write operations
+
 ## Documentation
+
+Document the information below about your environment. This documentation will be useful during later labs.
+
+| RDS Instance Identifier    | Endpoint                                           |
+| :------------------------- | :------------------------------------------------- |
+| lab-db                     | lab-db-rr.xxxxxxxxxxxx.us-east-1.rds.amazonaws.com | 
+
+| AMI Name         | AMI ID       |
+| :--------------- | :----------- |
+| app-public-image | ami-xxxxxxxx |
 
 ## Teardown Information
 
-Don't forget to delete snapshot after deregistering AMI.
+You will incur fees if you do not delete the RDS Read Replica and AMI created during this lab. The teardown process is below.
+
+1. Delete the Read Replica and Master RDS instances from the RDS Dashboard
+2. Deregister the AMI from the EC2 Dashboard
+3. Delete the snapshot created for the AMI from the "Snapshots" section on the EC2 Dashboard
 
 ## Questions
 
