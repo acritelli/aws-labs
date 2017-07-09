@@ -3,6 +3,7 @@
 AWS provides very powerful constructs for managing permissions across resources. Granular permissions can be assigned to users and groups, with the ability to create accounts for console access and API access. Additionally, specific roles can be created and assigned to resources, which provides the flexibility to manage permissions at the resource level.
 
 **Estimated time to complete:** 10 minutes
+**Cost:** No cost is associated with this lab
 
 ## Step 1: Create a group for lab use
 
@@ -20,7 +21,7 @@ Perform the following from the IAM console.
 Perform the following from the IAM console.
 
 1. Add a new user
-2. Specify a desired user name.
+2. Specify a desired user name
     * This user should only be used for this series of labs, so use something descriptive like "labuser"
 3. Specify the Access Type as "AWS Management Console access"
 4. Use a custom password of your choice
@@ -38,6 +39,8 @@ Perform the following from the IAM console.
 
 Document the information below about your environment. This documentation will be useful during later labs.
 
+**Be sure to keep the created username and password private**
+
 | Username | Password | Group    |
 | :------- | :------- | :------- |
 | labuser  |          | labgroup |
@@ -45,8 +48,6 @@ Document the information below about your environment. This documentation will b
 | Group Name | Policies |
 | :--------- | :------- |
 | labgroup   |          |
-
-**Be sure to keep the created username and password private**
 
 ## Teardown Information
 
