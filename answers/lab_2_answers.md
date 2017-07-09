@@ -1,4 +1,4 @@
-1. What is a DB subnet group? Why didn't we need one when deploying our RDS instance?
+1. What is a DB subnet group?
 
 2. What is multi-AZ? Is it used for increased capacity or availability? Are there different endpoints for each database instance in a multi-AZ configuration?
 

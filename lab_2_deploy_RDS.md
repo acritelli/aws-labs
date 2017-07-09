@@ -4,13 +4,11 @@ Now that we have a VPC to place our resources into, we will create a database fo
 
 **Estimated time to complete:** 30 minutes
 
-Cost - RDS incurs a cost. Consult the [RDS Pricing Website](https://aws.amazon.com/rds/pricing/) for complete information.
-
-**Estimated time to complete:** 30 minutes
+**Cost** RDS incurs a cost. Consult the [RDS Pricing Website](https://aws.amazon.com/rds/pricing/) for complete information.
 
 ## Step 1: Create a security group for MySQL
 
-Before we can deploy an RDS instance, it helps to have a defined security group to allow MySQL traffic. For now, we will create a very permissive group and then later refine these permissions during later labs.
+Before we can deploy an RDS instance, it helps to have a defined security group to allow MySQL traffic.
 
 Perform the following from the VPC console.
 
@@ -41,7 +39,7 @@ Perform the following from the RDS console.
     * DB instance class: db.t2.micro
     * No multi-AZ
     * Leave remaining settings at their defaults
-2. Set the instance identifier to lab-db
+2. Set the instance identifier to "lab-db"
 3. Set the username and password to your desired values
     * Be sure to write down this information
 4. Configure the Advanced Settings with the following attributes:
@@ -51,7 +49,7 @@ Perform the following from the RDS console.
       * Specify the same availability zone as the AZ created for your public subnet
       * Specify the security group created previously
     * Publicly accessible - no
-5. Configure the database name as: testapp
+5. Configure the database name as "testapp"
 6. Leave the remaining settings at their default values
 
 ## Documentation
