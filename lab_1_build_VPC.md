@@ -4,6 +4,8 @@ Before deploying any other services into the lab environment, we must create a v
 
 **Estimated time to complete:** 30 minutes
 
+**Cost:** No cost is associated with this lab
+
 ## Step 1: Create a new VPC for the lab environment
 
 **Note:** Be sure to select the desired region for your lab activities. These activities were performed in the *US East - N. Virginia* region when written.
@@ -38,7 +40,7 @@ We must now create the necessary subnets. All subnets below should be deployed i
 
 ## Step 3: Provide Internet connectivity to the public subnet
 
-Instances deployed into the public subnet should have direct Internet connectivity, as they represent the web front-end for the environment. To prevent unnecessary costs, we will start by only deploying an Internet Gateway. Unlike a NAT Gateway or Instance, an Internet Gateway does not incur any costs. We will eventually deploy a NAT Gateway for our private subnets.
+Instances deployed into the public subnet should have direct Internet connectivity, as they represent the web front-end for the environment. To prevent unnecessary costs, we will start by only deploying an Internet Gateway. Unlike a NAT Gateway or Instance, an Internet Gateway does not incur any costs.
 
 1. Create an Internet Gateway
 2. Attach the Internet Gateway to the Lab VPC
@@ -52,7 +54,7 @@ Now that we have attached an Internet Gateway to our VPC, we need to configure r
     * VPC: Place into the Lab VPC
 2. Add a default route with the following attributes:
     * Destination: 0.0.0.0/0
-    * Target: The Internet Gateway created in Step 2
+    * Target: The previously created Internet Gateway
 3. Add a subnet association for the Lab pubic subnet
 
 ## Documentation
