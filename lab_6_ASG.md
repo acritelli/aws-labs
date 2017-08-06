@@ -4,7 +4,7 @@ The publicly accessible webservers that host our application will be placed into
 
 **Estimated time to complete:** 1 hour
 
-Cost - 
+**Cost:** EC2 instances deployed in an Auto Scaling Group incur a cost. Consult the [EC2 Pricing Website](https://aws.amazon.com/ec2/pricing/) for complete information about EC2 costs.
 
 ## Step 1: Create a security group
 
@@ -20,11 +20,11 @@ Perform the following from the VPC console.
     * Allow web (HTTP) traffic from any source
     * Allow SSH from only your IP address
 
-*Fun fact:* as of this writing, the security group must be configured from the EC2 console, even though the launch configuration wizard provides an option to create a new security group. The launch configuration wizard's security group does **not** provide the ability to select the VPC for the security group, and this results in a subnet/security group mismatch when you try to save the final launch configuration.
+*Fun fact:* as of April 2017, the security group must be configured from the EC2 console, even though the launch configuration wizard provides an option to create a new security group. The launch configuration wizard's security group does **not** provide the ability to select the VPC for the security group, and this results in a subnet/security group mismatch when you try to save the final launch configuration. This bug may have been resolved by the time you read this.
 
 ## Step 2: Create a launch configuration
 
-Auto scaling groups must be associated with a specific launch configuration. The launch configuration can be changed as needed without recreating the entire ASG.
+ASGs must be associated with a specific launch configuration. The launch configuration can be changed as needed without recreating the entire ASG.
 
 Perform the following from the launch configuration section of the EC2 console.
 
@@ -35,16 +35,15 @@ Perform the following from the launch configuration section of the EC2 console.
     * This can be found under the "My AMIs" tab
 3. Specify an instance size of t2.micro
 4. Configure the name: Lab_Launch_Config_Version_1
-    * *Fun fact:* The AWS console will allow you to use spaces. However, spaces cause an error when you try to apply the launch configuration to the auto scaling group during the next wizard.
+    * *Fun fact:* The AWS console will allow you to use spaces. However, spaces cause an error when you try to apply the launch configuration to the auto scaling group during the next wizard (as of April 2017).
 5. Under "Advanced Details" configure the settings needed to assign a public IP address to every instance
 6. Use the security group that was created during the earlier step
-
 
 ## Step 3: Create an auto scaling group
 
 Now that we have a launch configuration, we can create an auto scaling group. The previous wizard should have automatically lead you into the deployment wizard for an ASG.
 
-Create an auto scaling group with the following attributes.
+Create an auto scaling group with the attributes below.
 
 1. Group name: Lab ASG
 2. Group size: Start with 1 instance

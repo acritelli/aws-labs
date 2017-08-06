@@ -4,7 +4,7 @@ Now that we have a VPC to place our resources into, we will create a database fo
 
 **Estimated time to complete:** 30 minutes
 
-**Cost** RDS incurs a cost. Consult the [RDS Pricing Website](https://aws.amazon.com/rds/pricing/) for complete information.
+**Cost:** RDS incurs a cost. Consult the [RDS Pricing Website](https://aws.amazon.com/rds/pricing/) for complete information.
 
 ## Step 1: Create a security group for MySQL
 

@@ -4,9 +4,9 @@ The publicly accessible webservers will be placed into an auto scaling group. Th
 
 To build this part of the infrastructure, we must first create an RDS read replica that our public instances will connect to. Then we will modify our existing instance to use this read replica and create an AMI based on the instance.
 
-Cost - RDS Read Replicas will incur a cost. So will instances launched in an auto scaling group.
-
 **Estimated time to complete:** 45 minutes
+
+**Cost:** RDS Read Replicas incur a cost, and AMIs incur a storage fee. Consult the [RDS Pricing Website](https://aws.amazon.com/rds/pricing/) and [AMI documentation](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device) for complete information.
 
 ## Step 1: Create an RDS Read Replica
 
@@ -26,8 +26,8 @@ We must now configure the web app on our existing EC2 instance to use the read r
 
 Connect to your instance over SSH and perform the following.
 
-1. Open /var/www/config.php in your text editor of choice
-2. Change the $server FQDN to the endpoint of your newly created Read Replica
+1. Open `/var/www/config.php` in your text editor of choice
+2. Change the `$server` FQDN to the endpoint of your newly created Read Replica
 
 ## Step 3: Test the reconfigured web application
 
@@ -37,7 +37,7 @@ Perform the following from a browser.
 
 1. Navigate to the public DNS name or IP address of your instance
 2. Navigate to the "Admin" section of the interface
-3. Try to link a new photo, as done in previous labs
+3. Try to add new photo, as done in previous labs
     * The upload attempt should fail and a MySQL message should be displayed indicating that the server is read-only
 
 ## Step 4: Create an AMI
@@ -57,9 +57,9 @@ Now that we have created an AMI for our auto scaling group, it is safe to revert
 
 Connect to your instance over SSH and perform the following.
 
-1. Open /var/www/config.php in your text editor of choice
-2. Change the $server FQDN to the endpoint of your original RDS instance
-    * This will allow for write operations
+1. Open `/var/www/config.php` in your text editor of choice
+2. Change the `$server` FQDN to the endpoint of your original RDS instance
+    * This will allow for write operations once again
 
 ## Documentation
 

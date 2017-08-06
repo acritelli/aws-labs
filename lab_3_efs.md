@@ -6,9 +6,11 @@ Note that sharing the same code via a network share isn't something that is reco
 
 **Estimated time to complete:** 10 minutes
 
+**Cost:** EFS incurs a cost. Consult the [EFS Pricing Website](https://aws.amazon.com/efs/pricing/) for complete information.
+
 ## Step 1: Create a security group for NFS
 
-EFS uses the Network Filesystem (NFS) protocol to present storage to clients. Before we can begin using NFS, we need to create a security group to allow NFS traffic. For now, we will create a very permissive group and then later refine these permissions during later labs.
+EFS uses the Network Filesystem (NFS) protocol to present storage to clients. Before we can begin using NFS, we need to create a security group to allow NFS traffic.
 
 Perform the following from the VPC console.
 
