@@ -4,7 +4,7 @@ Now that we have deployed an auto scaling group to contain our public instances,
 
 **Estimated time to complete:** 45 minutes
 
-Cost - 
+**Cost:** Elastic Load Balancers incur a cost. Consult the [ELB Pricing Website](https://aws.amazon.com/elasticloadbalancing/classicloadbalancer/) for complete information.
 
 # Step 1: Deploy an ELB
 
@@ -26,7 +26,6 @@ Perform the following from the Load Balancers section of the EC2 console.
     * We will add the load balancer to the ASG in the next step
 8. Uncheck "enable connection draining"
 9. Create the ELB
-10. 
 
 ## Step 2: Connect the ELB to ASG
 
@@ -38,12 +37,12 @@ Perform the following from the auto scaling groups page of the EC2 console.
 
 ## Step 3: Test basic ELB functionality
 
-Now that we have an ELB deployed, we can begin to test it.
+Now that we have an ELB deployed, we can begin to test it. 
 
 Perform the following.
 
 1. Navigate to the DNS name of the ELB
-    * Our web app should load
+    * The web app should load
 2. Navigate to the public IP address of the **admin** instance
 3. Navigate to the Admin page
 4. Add a new picture
@@ -82,7 +81,7 @@ You will incur fees if you do not delete the ELB instance created during this la
 
 ## Questions
 
-1. Explain the differences between an Application Load Balancer and a Classic Load Balancer
+1. Explain the differences between an Application Load Balancer and a Classic Load Balancer.
 
 2. What is an internal load balancer?
 
