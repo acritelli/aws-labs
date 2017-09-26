@@ -1,6 +1,6 @@
 # Lab 7: Create an Elastic Load Balancer
 
-Now that we have deployed an auto scaling group to contain our public instances, we can place an Elastic Load Balancer (ELB) in front of our publicly accessible instances. This will allow for better traffic distribution across the group of public instances. Additionally, it provides for a much better user experience: an ELB can have a single DNS name, instead of having to manually navigate to the address of individual instances within the ASG.
+Now that we have deployed an auto scaling group to contain our public instances, we can place an Elastic Load Balancer (ELB) in front of these public instances. This will allow for better traffic distribution across the group of public instances. Additionally, it provides for a much better user experience: an ELB can have a single DNS name, instead of having to manually navigate to the address of individual instances within the ASG.
 
 **Estimated time to complete:** 45 minutes
 
@@ -10,7 +10,7 @@ Now that we have deployed an auto scaling group to contain our public instances,
 
 Perform the following from the Load Balancers section of the EC2 console.
 
-1. Create a new classic load balancer
+1. Create a new Classic Load Balancer
 2. Set the load balancer name to "Lab-ELB"
 3. Create the load balancer within your Lab VPC and public subnet
 4. Leave the load balancer and instance protocol and port set to HTTP/80
@@ -27,9 +27,9 @@ Perform the following from the Load Balancers section of the EC2 console.
 8. Uncheck "enable connection draining"
 9. Create the ELB
 
-## Step 2: Connect the ELB to ASG
+## Step 2: Connect the ELB to the ASG
 
-Perform the following from the auto scaling groups page of the EC2 console.
+Perform the following from the Auto Scaling Groups page of the EC2 console.
 
 1. Select the previously created ASG and choose "Edit" from the "Actions" menu
 2. Specify the newly created ELB as the load balancer for the group
