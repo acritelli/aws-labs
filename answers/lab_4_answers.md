@@ -7,7 +7,9 @@ Scripts can be passed as user data to an EC2 instance during provisioning.
 2. How would you obtain the public IP address of your instance while logged into the instance and without using the EC2 console?
     * Hint: This will involve making a web request to a specific URL
 
-The public IP address of an instance is available in the instance metadata, which can be obtained from http://169.254.169.254/latest/meta-data/ At the command line, this URL could be queried by using cURL or wget. TODO: Need specific URL for public IP.
+The public IP address of an instance is available in the instance metadata, which can be obtained from http://169.254.169.254/latest/meta-data/ At the command line, this URL could be queried by using cURL or wget.
+
+The specific URL for the public IP address would be http://169.254.169.254/latest/meta-data/public-ipv4
 
 [https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html#instancedata-data-retrieval](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html#instancedata-data-retrieval)
 
