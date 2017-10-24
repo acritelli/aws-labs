@@ -17,7 +17,7 @@ The specific URL for the public IP address would be http://169.254.169.254/lates
 
 3. Explain the difference between user data and metadata.
 
-Instance user data includes scripts or configurations that were passed to the instance during launch. Instance metadata is information about the instance, such as the public hostname, ami, instance ID, or other identifying characteristics about an instance. Both are accessible within an instance after launch, and can be found at http://169.254.169.254/latest/user-data and http://169.254.169.254/latest/meta-data for user data and metadata, respectively.
+Instance user data includes scripts or configurations that were passed to the instance during launch. Instance metadata is information about the instance, such as the public hostname, AMI, instance ID, or other identifying characteristics about an instance. Both are accessible within an instance after launch, and can be found at http://169.254.169.254/latest/user-data and http://169.254.169.254/latest/meta-data for user data and metadata, respectively.
 
 [https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html)
 
