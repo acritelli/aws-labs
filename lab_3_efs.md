@@ -53,6 +53,6 @@ You will incur fees if you do not delete the EFS created during this lab. The te
 
 2. What makes EFS unique when compared to other types of storage? Why are we using EFS in this scenario? Why are other types of storage, such as S3 or EBS, inappropriate for this scenario?
 
-3. What types of storage are available?
+3. What types of storage performance are available?
 
 4. What is a mount target?
