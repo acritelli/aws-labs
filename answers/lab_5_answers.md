@@ -16,6 +16,11 @@ The application configuration was using the RDS Read Replica. This database is r
 
 5. Describe some different ways that you could share an AMI with others.
 
+AMIs can be shared by making them public or by only sharing them with specific AWS accounts. Making an AMI public will make it available to all AWS users in a region through the Community AMIs page. Alternatively, an AMI can be shared with specific AWS accounts if their account ID is known.
+
+[http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sharingamis-intro.html](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sharingamis-intro.html)
+[http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sharingamis-explicit.html](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sharingamis-explicit.html)
+
 6. Do the public DNS name and IP address of an instance change during reboot?
 
 No.
