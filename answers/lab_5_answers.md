@@ -1,5 +1,9 @@
 1. When deploying the read replica, there was an option for enhanced monitoring. This option was also present when deploying the original RDS instance. Explain what Enhanced Monitoring can provide. What is the difference between using Enhanced Monitoring versus the standards CloudWatch metrics that could be collected?
 
+Enhanced monitoring can provide more granular metrics about DB instance performance. This is accomplished by using an agent installed on the DB instance to collect performance data and send this data to CloudWatch. Metrics about database performance can also be collected and sent more frequently, with the option to set the granularity down to 1 second intervals.
+
+[http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.OS.html](http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.OS.html)
+
 2. Should read replicas be used for increased availability or increased database performance?
 
 Read replicas are used for increased database performance for operations that require additional database reads, but do not need database writes. A read replica doesn't provide any additional database availability.
